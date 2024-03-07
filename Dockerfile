@@ -29,8 +29,8 @@ COPY --from=builder /usr/local/lib/python3.9/site-packages /usr/local/lib/python
 # Copy the application source code from the builder stage
 COPY --from=builder /app/* .
 
-# Expose port 5000
-EXPOSE 5000
+# Expose port 8000
+EXPOSE 8000
 
 # Command to run the application
 CMD ["python","app.py"]
