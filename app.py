@@ -85,7 +85,7 @@ def is_approved(url):
 def proxied_request_info(proxy_url):
     """Returns information about the target (proxied) URL given a URL sent to
     the proxy itself. For example, if given:
-        http://localhost:5000/p/google.com/search?q=foo
+        http://localhost:8000/p/google.com/search?q=foo
     then the result is:
         ("google.com", "search?q=foo")"""
     parts = urlparse(proxy_url)
