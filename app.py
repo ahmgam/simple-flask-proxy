@@ -73,12 +73,6 @@ def make_request(url, method, headers={}, data=None):
     return requests.request(method, url, params=request.args, stream=True, headers=headers, allow_redirects=False, data=data)
 
 
-def is_approved(url):
-    """Indicates whether the given URL is allowed to be fetched.  This
-    prevents the server from becoming an open proxy"""
-    parts = urlparse(url)
-    return parts.netloc in 
-
 def proxied_request_info(proxy_url):
     """Returns information about the target (proxied) URL given a URL sent to
     the proxy itself. For example, if given:
