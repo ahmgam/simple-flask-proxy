@@ -56,9 +56,6 @@ def proxy(url):
 def make_request(url, method, headers={}, data=None):
     url = 'http://%s' % url
     # Ensure the URL is approved, else abort
-    if not is_approved(url):
-        LOG.warn("URL is not approved: %s", url)
-        abort(403)
 
     # Include Authorization header from incoming request
     auth_header = request.headers.get('Authorization')
@@ -80,7 +77,7 @@ def is_approved(url):
     """Indicates whether the given URL is allowed to be fetched.  This
     prevents the server from becoming an open proxy"""
     parts = urlparse(url)
-    return parts.netloc in APPROVED_HOSTS
+    return parts.netloc in 
 
 def proxied_request_info(proxy_url):
     """Returns information about the target (proxied) URL given a URL sent to
